@@ -7,7 +7,7 @@ A simple Docker LAMP setup for dev / test
 1) clone this repository
 2) start docker using docker-compose up -d (-d for detached mode) and wait until everything is finished
 
-# start using the stack
+### start using the stack
 + add some files into the www folder inside this directory (e.g. index.html)
 + http://localhost for the website and view the added index.html
 + http://localhost:8000 for phpmyadmin
