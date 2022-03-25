@@ -1,0 +1,39 @@
+version: '3.8'
+services:
+  webserver:
+    build: .
+    container_name: 'lamp'
+    restart: 'always'
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./www:/var/www/html
+      - ./config/php:/usr/local/etc/php/
+      - ./config/apache:/etc/apache2/sites-enabled
+    depends_on:
+      - database
+    #command: >
+    #  bash -c "wget https://www.shopware.com/de/Download/redirect/version/sw6/file/install_v6.3.0.2_b5788541058257e6114b7405a41a36946132af9c.zip -q -O shopware.zip
+    #    unzip -q shopware.zip 
+    #    rm shopware.zip"
+
+  database:
+    container_name: 'lamp-database'
+    image: mysql
+    restart: always
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    
+  phpmyadmin:
+    container_name: 'lamp-database-phpmyadmin'
+    image: phpmyadmin/phpmyadmin:latest
+    ports:
+      - 8000:80
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_HOST=database
+    depends_on:
+      - database
