@@ -8,4 +8,7 @@ A simple Docker LAMP setup for dev / test
 - db*: database files for persistance
 - www*: www folder from container:/var/www/html 
 
+### Additional Info:
+- phpmyadmin running on port 8000
+
 *: created on startup
