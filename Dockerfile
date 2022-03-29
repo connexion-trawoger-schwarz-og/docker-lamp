@@ -12,7 +12,6 @@ RUN DEBIAN_FRONTEND=noninteractive \
 
 RUN pecl install xdebug-3.0.3
 RUN docker-php-ext-enable xdebug
-RUN echo "xdebug.mode=debug" >> /usr/local/etc/php/php.ini
 	
 
 # if needed use pdo driver replace this 2 lines 

@@ -9,7 +9,7 @@ services:
       - "443:443"
     volumes:
       - ./www:/var/www/html
-      #- ./config/php:/usr/local/etc/php/
+      dat- ./config/php:/usr/local/etc/php/
       - ./config/apache:/etc/apache2/sites-enabled
     depends_on:
       - database
@@ -31,8 +31,9 @@ services:
       #MYSQL_ROOT_HOST: '*.*.*.*' 
     
   phpmyadmin:
-    container_name: 'lamp-database-phpmyadmin'
+    container_name: 'lamp-phpmyadmin'
     image: phpmyadmin/phpmyadmin:latest
+    restart: always
     ports:
       - 8000:80
     environment:
