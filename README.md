@@ -12,6 +12,10 @@ A simple Docker LAMP setup for dev / test
 + http://localhost for the website and view the added index.html
 + http://localhost:8000 for phpmyadmin
 
+### connect to database
++ check if pdo_mysql or mysqli driver is needed
++ database host name is *database*
+
 
 
 ### Folders
