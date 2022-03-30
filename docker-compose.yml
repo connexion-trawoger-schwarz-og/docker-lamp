@@ -9,7 +9,7 @@ services:
       - "443:443"
     volumes:
       - ./www:/var/www/html
-      dat- ./config/php:/usr/local/etc/php/
+      - ./config/php:/usr/local/etc/php/
       - ./config/apache:/etc/apache2/sites-enabled
     depends_on:
       - database

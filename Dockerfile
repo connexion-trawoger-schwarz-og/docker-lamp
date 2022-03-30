@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive \
 	&& docker-php-ext-install mysqli \
 	&& docker-php-ext-enable mysqli
 
-RUN pecl install xdebug-3.0.3
+RUN pecl install xdebug-3.1.3
 RUN docker-php-ext-enable xdebug
 	
 
